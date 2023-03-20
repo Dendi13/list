@@ -1,6 +1,7 @@
 let taskInput = document.querySelector('#taskInput');
-let addBtn = document.querySelector('#addBtn');
+let addBtn = document.querySelector('.addBtn__add');
 let list = document.querySelector('#list');
+let addBtn__clear = document.querySelector('.addBtn__clear');
 
 addBtn.addEventListener('click', (evt) => {
 
@@ -32,6 +33,10 @@ addBtn.addEventListener('click', (evt) => {
     cor.addEventListener('click', (evt) => {
         list.removeChild(li);
     })
+})
+
+addBtn__clear.addEventListener('click', (evt) => {
+
 })
 
 
