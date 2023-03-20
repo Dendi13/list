@@ -11,6 +11,7 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     padding: 20px;
+    background: url(img/1654085787_16-celes-club-p-sinie-anime-oboi-krasivie-17.jpg);
 }
 
 ul {
@@ -60,7 +61,11 @@ ul>li {
 }
 
 /* Кнопка добавления задачи */
-#addBtn {}
+#addBtn {
+    color: green;
+    font-size: 25px;
+    border: none;
+}
 
 /* Список задач */
 
@@ -78,6 +83,8 @@ ul>li {
     border-radius: 3px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.514);
     background-color: white;
+    padding: 15px;
+    font-size: 25px;
 }
 
 /* Запретить ужиматься блоку с кнопками в элементе списка*/
@@ -87,11 +94,14 @@ ul>li {
 
 
 /* Символ корзины */
-.fa-trash-can {}
+.fa-trash-can {
+    color: red;
+}
 
 /* Символ чекбокса */
 .fa-square-check {
     margin-right: 20px;
+    color: green;
 }
 
 /* Поведение элемента списка если добавлен класс .done */
