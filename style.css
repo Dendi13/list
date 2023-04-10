@@ -107,4 +107,5 @@ ul>li {
 /* Поведение элемента списка если добавлен класс .done */
 .item.done {
     text-decoration: line-through;
+    color: green;
 }
