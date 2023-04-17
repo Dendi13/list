@@ -14,6 +14,7 @@ addBtn.addEventListener('click', () => {
     list.append(newItem);
     taskInput.value = '';
     localStorage.setItem('tasksLS', list.innerHTML);
+    writeLS();
 })
 
 function addTask(newItem){
@@ -36,7 +37,7 @@ function addTask(newItem){
     let newTask = {
         id: Date.now(),
         text: taskInput.value,
-        done: false
+        complete: false
     }
 
     tasks.push(newTask);
@@ -51,11 +52,21 @@ list.addEventListener('click', function(event) {
     if(target.dataset.action == 'delete') {
         removeTask(target);
     }
+    writeLS();
 })
 
 function completeBtn(target) {
     target.closest('li').classList.toggle('done');
-    localStorage.setItem('tasksLS', list.innerHTML)
+    let currentId = target.closest('li').id;
+    const index = tasks.findIndex((task) => {
+        return task.id == currentId;
+    })
+
+    if(tasks[index].complete == false) {
+        tasks[index].complete = true;
+    } else {
+        tasks[index].complete = false;
+    }
 }
 
 function removeTask(target) {
@@ -67,6 +78,10 @@ function removeTask(target) {
     })
 
     tasks.splice(index, 1);
+}
+
+function eriteLS() {
+    localStorage.setItem('tasksLS', JSON.stringify(tasks));
 }
 
 
